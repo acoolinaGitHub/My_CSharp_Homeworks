@@ -2,25 +2,36 @@
 
 Console.Clear();
 Random rnd = new Random();
-
-int x = rnd.Next(1,1000000);
+int x = rnd.Next(1,10000000);
 Console.WriteLine($"Random = {x}");
 
-int b1=-1; 
-int b2=-1;
-int b3=-1;
-
-while (x !=0)
+if (x > 99)
 {
-    b3 = b2;
-    b2 = b1;
-    b1 = x % 10;  // get last digit  
-    x = x / 10;   // get number without last digit
+    while (x > 999)
+    { 
+        x = x / 10;   // get number without last digit    
+    }
+    x = x % 10;       // get last digit
+    Console.WriteLine($"The third number = {x}");
 }
+else Console.WriteLine($"Exeption: the third number is abcent");
 
-if (b3 == -1) 
-{
-    Console.WriteLine($"Exeption: the third number is abcent");
-}
-else Console.WriteLine($"The third number = {b3}");
+
+// int b1=-1; 
+// int b2=-1;
+// int b3=-1;
+
+// while (x !=0)
+// {
+//     b3 = b2;
+//     b2 = b1;
+//     b1 = x % 10;  // get last digit  
+//     x = x / 10;   // get number without last digit
+// }
+
+// if (b3 == -1) 
+// {
+//     Console.WriteLine($"Exeption: the third number is abcent");
+// }
+// else Console.WriteLine($"The third number = {b3}");
 
