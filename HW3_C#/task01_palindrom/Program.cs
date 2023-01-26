@@ -7,30 +7,33 @@ Console.Clear();
 Console.Write("Please enter a number: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
-//-----------------------------------------------
-int FindDigits (int count) // find the quantity of digits in {x}
-{
-    count = 0;    
-    if (x == 0)
-    {
-        Console.WriteLine("Count = 1");
-    }
-    else
-    {
-        while (x > 0)
-        {    
-            count++;
-            x = x / 10;
-        }
-    Console.WriteLine($"Count = {count}");
-    }
-    return count;
-}
+//----------------------------------------------- //changed to => int i = Convert.ToInt32(Math.Ceiling(Math.Log10(x)));
+
+// int FindDigits (int count) // find the quantity of digits in {x}     
+// {
+//     count = 0;    
+//     if (x == 0)
+//     {
+//         Console.WriteLine("Count = 1");
+//     }
+//     else
+//     {
+//         while (x > 0)
+//         {    
+//             count++;
+//             x = x / 10;
+//         }
+//     Console.WriteLine($"Count = {count}");
+//     }
+//     return count;
+// }
 //-----------------------------------------------
 
 bool CheckIsPalindrom(int x)
 {
-    int i = FindDigits(x);
+    //int i = FindDigits(x);
+    int i = Convert.ToInt32(Math.Ceiling(Math.Log10(x)));
+    Console.WriteLine($"i = {i}");
     while (i > 1) 
     {
         int a = Convert.ToInt32(Math.Pow(10,i-1)); // exponentiation {i-1}
