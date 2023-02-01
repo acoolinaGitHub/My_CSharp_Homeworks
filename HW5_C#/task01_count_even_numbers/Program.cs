@@ -24,3 +24,21 @@ foreach (var item in arr)
     }    
 }
 Console.WriteLine($"] ==> Count: {count}");
+
+// void RecursRevers(int[] arr, int i, int j)     // example: Reverse of array
+// {
+//     if (i>=j)
+//     {
+//         return;
+//     }
+//     else 
+//     {
+//         int tmp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = tmp;
+
+//         RecursRevers(arr, i + 1, j - 1);
+//     }
+// }
+
+// RecursRevers(arr, 0, arr.Length - 1);

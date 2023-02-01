@@ -1,25 +1,31 @@
-﻿// diff of max and min in array
+﻿// diff of max and min in double array
 
 Console.Clear();
 Random rnd = new Random();
-int[] arr = new int[rnd.Next(10)];
+double[] arr = new double[10];
+
+double genRndDouble (int a, int b)  // generate of double array
+{
+    double rndDouble = a + rnd.NextDouble() * (b - a);
+    return rndDouble;
+}
 
 Console.Write("[");
 for (int i = 0; i < arr.Length; i++)
 {
-    arr[i] = rnd.Next(1,10);
+    arr[i] = genRndDouble(-10,10);
     if (i == arr.Length-1)          // print array
     {
-        Console.Write(arr[i]); 
+        Console.Write(Math.Round(arr[i],2)); 
     }
-    else Console.Write(arr[i] +", "); 
+    else Console.Write(Math.Round(arr[i],2) +", "); 
 }
 Console.Write("]");
 Console.WriteLine();
 
-int min = arr[0];
-int max = arr[0];
-int diff = 0;
+double min = arr[0];
+double max = arr[0];
+double diff = 0;
 for (int i = 0; i < arr.Length; i++)
 {        
     if (arr[i] > max)
@@ -27,7 +33,7 @@ for (int i = 0; i < arr.Length; i++)
         max = arr[i];
     }
 }
-Console.WriteLine($"--> Max: {max}");
+Console.WriteLine($"--> Max: {Math.Round(max,2)}");
 
 for (int i = 0; i < arr.Length; i++)
 {        
@@ -36,7 +42,7 @@ for (int i = 0; i < arr.Length; i++)
         min = arr[i];
     }
 }
-Console.WriteLine($"--> Min: {min}");
+Console.WriteLine($"--> Min: {Math.Round(min,2)}");   
 
 diff = max - min;
-Console.WriteLine($"==> Diff: {diff}");
+Console.WriteLine($"==> Diff: {Math.Round(diff,2)}");  // or $"==> Diff: {diff:f2)}"
