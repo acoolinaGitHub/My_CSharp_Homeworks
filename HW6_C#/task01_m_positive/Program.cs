@@ -12,7 +12,7 @@ bool isMinus(char c)
 }
 
 bool isDigit(char c)
-{    
+{
     return Char.IsDigit(c);
 }
 
@@ -21,15 +21,15 @@ bool number = false;
 bool negative = false;
 
 foreach (var item in str)
-{   
+{
     if (isDigit(item))
     {
         number = true;
-    }    
+    }
     else if (isMinus(item) && !number)
     {
         negative = true;
-    }     
+    }
     else if (number && !negative && !isDigit(item))
     {
         count++;
@@ -40,7 +40,7 @@ foreach (var item in str)
             negative = true;
         }
     }
-    else 
+    else
     {
         number = false;
         negative = false;
