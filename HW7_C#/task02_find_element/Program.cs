@@ -47,7 +47,7 @@ Console.WriteLine();
 
 if ((i >= m) || (j >= n))
 {
-    Console.WriteLine($"==> Exseption: a[{i}, {j}] is Out of array");
+    Console.WriteLine($"==> Exception: a[{i}, {j}] is Out of array");
 }
 else Console.WriteLine($"==> Element a[{i}, {j}]:  {a2d[i,j]}");
 
